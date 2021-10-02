@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html{
+    font-size: 16px;
+}
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial , sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* setting varibales*/
+#root{
+    --hf-bg-color: #203040; /* hf = header and footer */
+    --main-text-color:#ffffff;   
+}
+
+/* utility classes and same style  */
+a{
+    text-decoration: none;
+    color: var(--main-text-color);
+    transition: 0.6ms ease;
+}
+a:hover{
+ color: orangered;
+}
+
+
+
+/* grid container  */
+.grid-contaainer{
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "header"
+    "main"
+    "footer";
+    grid-template-rows:4rem 1fr 4rem;
+    grid-template-columns: 1fr;
+}
+
+
+/* header css  */
+header{
+grid-area: header;
+background-color:var(--hf-bg-color);
+display: flex;
+align-items: center;
+}
+
+/* main css  */
+main{
+grid-area: main;
+}
+
+
+/* footer css  */
+footer{
+grid-area: footer;
+background-color:var(--hf-bg-color);
+color:var(--main-text-color);
+display: flex;
+align-items: center;
+justify-content: center;
 }
