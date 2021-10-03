@@ -50,8 +50,68 @@ align-items: center;
 /* main css  */
 main{
 grid-area: main;
+margin-top: 2em;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.main{
+    flex: 3 60%;
+}
+.sidebar{
+    flex: 1 20%;
 }
 
+/* Products components  */
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.products li{
+    flex: 0 1 20rem;
+    padding: 1em;
+}
+.product{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-bottom: 0.6em;
+}
+.product img{
+  max-height: 23rem;
+  max-height: 23rem;
+}
+.product a{
+    color: black;
+}
+.product-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-price h3,button{
+    flex: 1;
+}
+.product-price button{
+    padding: 0.8em;
+    border: 2px solid #c0c0c0;
+    cursor: pointer;
+    background: #ffc000;
+    transition: 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.product-price button:hover{
+    border: 2px solid black;
+}
+
+
+/* main css end here  */
 
 /* footer css  */
 footer{
