@@ -1,5 +1,5 @@
 html{
-    font-size: 16px;
+    font-size: 12px;
 }
 *, ::after, ::before{
     padding: 0;
@@ -19,12 +19,17 @@ a{
     text-decoration: none;
     color: var(--main-text-color);
     transition: 0.6ms ease;
+    cursor: pointer;
 }
 a:hover{
  color: orangered;
 }
-
-
+li{
+    list-style: none;
+}
+button{
+    cursor: pointer;
+}
 
 /* grid container  */
 .grid-contaainer{
@@ -50,7 +55,6 @@ align-items: center;
 /* main css  */
 main{
 grid-area: main;
-margin-top: 2em;
 }
 .content{
     display: flex;
@@ -94,10 +98,10 @@ margin-top: 2em;
     justify-content: space-between;
     align-items: center;
 }
-.product-price h3,button{
+.product-price h3, .button-primary{
     flex: 1;
 }
-.product-price button{
+.button-primary{
     padding: 0.8em;
     border: 2px solid #c0c0c0;
     cursor: pointer;
@@ -106,7 +110,89 @@ margin-top: 2em;
     font-size: 0.9rem;
     font-weight: 600;
 }
-.product-price button:hover{
+ .button-primary:hover{
+    border: 2px solid black;
+}
+
+/* filter component  */
+.filter{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    margin: 1em;
+    border-bottom: 2px solid grey;
+
+}
+.filter div{
+    flex: 1;
+}
+
+/* cart css  */
+.cart{
+padding: 1em;
+margin: 1em;
+display: flex;
+flex-wrap: wrap;
+}
+.cart-header{
+border-bottom: 2px solid gray;
+}
+.cart-items img{
+width: 5rem;
+}
+.cart-items li{
+display: flex;
+}
+.cart-items li div{
+    padding: 0.5em;
+}
+.cart-items li .right{
+    flex: 1;
+}
+.right{
+    text-align: left;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+.removebtn{
+    max-height: 2rem;
+    width: auto;
+}
+
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.total >div {
+    font-size: 1.5rem;
+}
+.total >div , .total > button{
+    flex: 1;
+}
+
+.extraadd{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+.extraadd button{
+    height: auto;
+    width: auto;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+.extraadd button{
+    background: #ffc000;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.05em;
+}
+.extraadd button:hover{
     border: 2px solid black;
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import formatCurrency from "../util";
 
-const Products = ({ products }) => {
+const Products = ({ products,addToCart }) => {
   return (
     <div>
       <ul className="products">
@@ -15,13 +15,13 @@ const Products = ({ products }) => {
                   <img src={image} alt={title} />
                   <p> {title} </p>
                 </Link>
-           
               </div>
               <div className="product-price">
-                <h3>{ formatCurrency(price)}</h3>
-                <button className="button-primary">Add To Cart</button>
+                <h3>{formatCurrency(price)}</h3>
+                <button className="button-primary"
+                onClick={()=>addToCart(product)}
+                >Add To Cart</button>
               </div>
-              
             </li>
           );
         })}
