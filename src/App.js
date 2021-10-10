@@ -11,7 +11,11 @@ function App() {
     size: "",
     sort: "",
   });
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(
+    localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
+      : []
+  );
 
   // filter functions
 
@@ -70,12 +74,17 @@ function App() {
     }
 
     setCartItems([...cartArr]);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   // cart remove function
 
   const removeFromCart = (cart) => {
     setCartItems(cartItems.filter((item) => item.id !== cart.id));
+    localStorage.setItem(
+      "cartItems",
+      JSON.stringify(cartItems.filter((item) => item.id !== cart.id))
+    );
   };
 
   // addOne removeOne
@@ -89,6 +98,7 @@ function App() {
     });
 
     setCartItems([...addArr]);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   const removeOne = (cartItem) => {
@@ -104,6 +114,7 @@ function App() {
     });
 
     setCartItems([...minusArr]);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   return (
