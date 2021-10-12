@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import formatCurrency from "../util";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { GrAddCircle } from "react-icons/gr";
 
 const Cart = ({ cartItems, removeFromCart, addOne, removeOne }) => {
+  const [showChekOut, setShowCheckOut] = useState(false);
+
   return (
     <div>
       {cartItems.length === 0 ? (
@@ -51,6 +53,7 @@ const Cart = ({ cartItems, removeFromCart, addOne, removeOne }) => {
           </ul>
         </div>
         {cartItems.length !== 0 && (
+          <div>
           <div className="cart">
             <div className="total">
               <div>
@@ -62,9 +65,22 @@ const Cart = ({ cartItems, removeFromCart, addOne, removeOne }) => {
                   )
                 )}
               </div>
-              <button className="button-primary">Proceed</button>
+              <button
+                className="button-primary"
+                onClick={() => setShowCheckOut(true)}
+              >
+                Proceed
+              </button>
             </div>
           </div>
+        {showChekOut && (
+          <div className="cart">
+            <form>
+        
+            </form>
+          </div>
+        )}
+        </div>
         )}
       </div>
     </div>
