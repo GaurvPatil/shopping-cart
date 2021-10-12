@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cart from "./components/Cart";
 import Filter from "./components/Filter";
 import Products from "./components/Products";
